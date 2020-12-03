@@ -11,7 +11,7 @@
     "php": "^7.2",
     "sylius/attribute": "^1.6.2",
     "doctrine/orm": "*",
-    "webmozart/assert": "^1.9"
+    "webmozart/assert": "^1.0"
   },
   "require-dev": {
     "sonata-project/admin-bundle": "^3.81"
