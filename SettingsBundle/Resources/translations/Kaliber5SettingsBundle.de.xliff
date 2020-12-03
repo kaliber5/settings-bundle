@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="de" datatype="plaintext" original="">
+        <body>
+            <trans-unit id="Setting">
+                <source>Setting</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="Settings">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="Type">
+                <source>Type</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="label.admin.setting.name">
+                <source>label.admin.setting.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="label.admin.setting.code">
+                <source>label.admin.setting.code</source>
+                <target>Code</target>
+            </trans-unit>
+            <trans-unit id="label.admin.setting.description">
+                <source>label.admin.setting.description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="label.admin.setting_value.value">
+                <source>label.admin.setting_value.value</source>
+                <target>Wert</target>
+            </trans-unit>
+            <trans-unit id="Setting Values">
+                <source>Setting Values</source>
+                <target>Werte</target>
+            </trans-unit>
+            <trans-unit id="Multiple">
+                <source>Multiple</source>
+                <target>Mehrfache Werte</target>
+            </trans-unit>
+            <trans-unit id="Values">
+                <source>Values</source>
+                <target>Werte</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,19 @@
+{
+  "name": "kaliber5/settings-bundle",
+  "description": "symfony bundle to manage app settings",
+  "type": "symfony-bundle",
+  "autoload": {
+    "psr-4": {
+      "Kaliber5\\SettingsBundle\\": "SettingsBundle/"
+    }
+  },
+  "require": {
+    "php": "^7.2",
+    "sylius/attribute": "^1.6.2",
+    "doctrine/orm": "*",
+    "webmozart/assert": "^1.9"
+  },
+  "require-dev": {
+    "sonata-project/admin-bundle": "^3.81"
+  }
+}
