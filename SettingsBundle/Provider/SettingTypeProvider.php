@@ -7,6 +7,7 @@ use Sylius\Component\Attribute\AttributeType\TextAttributeType;
 use Sylius\Component\Attribute\Model\AttributeValueInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
@@ -22,12 +23,18 @@ class SettingTypeProvider
     const EMAIL_TYPE = 'email';
 
     /**
+     * type file
+     */
+    const FILE_TYPE = 'email';
+
+    /**
      * available types
      */
     const TYPES = [
         TextAttributeType::TYPE,
         self::EMAIL_TYPE,
         CheckboxAttributeType::TYPE,
+        self::FILE_TYPE,
     ];
 
     /**
@@ -36,6 +43,7 @@ class SettingTypeProvider
     const STORAGE_TYPES = [
         TextAttributeType::TYPE => AttributeValueInterface::STORAGE_TEXT,
         self::EMAIL_TYPE => AttributeValueInterface::STORAGE_TEXT,
+        self::FILE_TYPE => AttributeValueInterface::STORAGE_TEXT,
         CheckboxAttributeType::TYPE => AttributeValueInterface::STORAGE_BOOLEAN,
     ];
 
@@ -45,6 +53,7 @@ class SettingTypeProvider
     const FORM_TYPES = [
         TextAttributeType::TYPE => TextType::class,
         self::EMAIL_TYPE => EmailType::class,
+        self::FILE_TYPE => FileType::class,
         CheckboxAttributeType::TYPE => CheckboxType::class,
     ];
 

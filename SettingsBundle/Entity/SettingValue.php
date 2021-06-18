@@ -4,6 +4,7 @@ namespace Kaliber5\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Attribute\Model\AttributeValue;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity
@@ -74,6 +75,11 @@ class SettingValue extends AttributeValue
      * @ORM\Column(name="val_json", type="json_array", nullable=true)
      */
     private $json;
+
+    /**
+     * @var UploadedFile|null
+     */
+    private $file;
 
     /**
      * @return integer
@@ -154,5 +160,21 @@ class SettingValue extends AttributeValue
     protected function setJson(?array $json): void
     {
         $this->json = $json;
+    }
+
+    /**
+     * @return UploadedFile|null
+     */
+    public function getFile(): ?UploadedFile
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param UploadedFile|null $file
+     */
+    public function setFile(?UploadedFile $file): void
+    {
+        $this->file = $file;
     }
 }
