@@ -56,6 +56,35 @@ class SettingAdmin extends AbstractAdmin
         $errorElement->addConstraint(new UniqueEntity(['fields' => ['code']]));
     }
 
+    public function prePersist($object)
+    {
+        parent::prePersist($object);
+        $this->handleSettingsValueAdmin($object);
+    }
+
+    public function preUpdate($object)
+    {
+        parent::preUpdate($object);
+        $this->handleSettingsValueAdmin($object);
+    }
+
+    // More or less related to https://github.com/sonata-project/SonataAdminBundle/issues/1502
+    protected function handleSettingsValueAdmin($object)
+    {
+        foreach ($this->getFormFieldDescriptions() as $fieldName => $fieldDescription) {
+            // detect embedded Admins
+            if ($fieldDescription->getName() === 'settingValues') {
+                /** @var AbstractAdmin $associationAdmin */
+                $associationAdmin = $fieldDescription->getAssociationAdmin();
+                $associationObjectGetter = 'get'.ucfirst($fieldName);
+                $associationObjects = $object->$associationObjectGetter();
+                foreach ($associationObjects as $associationObject) {
+                    $associationAdmin->preUpdate($associationObject);
+                }
+            }
+        }
+    }
+
     /**
      * @param FormMapper $formMapper
      */
@@ -119,7 +148,7 @@ class SettingAdmin extends AbstractAdmin
                 ;
             } else {
                 if ($this->getSubject() && $this->getSubject()->getSettingValues()->isEmpty()) {
-                    $this->getSubject()->addSettingValue(new SettingValue());
+                    $this->getSubject()->addSettingValue($this->getSubject()->createSettingValue());
                 }
                 $formMapper
                     ->add(

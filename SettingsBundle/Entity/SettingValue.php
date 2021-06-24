@@ -39,42 +39,42 @@ class SettingValue extends AttributeValue
      *
      * @ORM\Column(name="val_bool", type="boolean", nullable=true)
      */
-    private $boolean;
+    protected $boolean;
 
     /**
      * @var int
      *
      * @ORM\Column(name="val_int", type="integer", nullable=true)
      */
-    private $integer;
+    protected $integer;
 
     /**
      * @var float
      *
      * @ORM\Column(name="val_float", type="float", nullable=true)
      */
-    private $float;
+    protected $float;
 
     /**
      * @var \DateTimeInterface
      *
      * @ORM\Column(name="val_datetime", type="datetime", nullable=true)
      */
-    private $datetime;
+    protected $datetime;
 
     /**
      * @var \DateTimeInterface
      *
      * @ORM\Column(name="val_date", type="date", nullable=true)
      */
-    private $date;
+    protected $date;
 
     /**
      * @var array
      *
      * @ORM\Column(name="val_json", type="json_array", nullable=true)
      */
-    private $json;
+    protected $json;
 
     /**
      * @var UploadedFile|null

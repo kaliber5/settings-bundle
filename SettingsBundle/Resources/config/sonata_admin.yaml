@@ -10,5 +10,6 @@ services:
         arguments: [~, Kaliber5\SettingsBundle\Entity\SettingValue, ~]
         calls:
             -   setSettingTypeProvider: [ '@Kaliber5\SettingsBundle\Provider\SettingTypeProvider' ]
+            -   setFileProvider: [ '@Kaliber5\SettingsBundle\Provider\FileProviderInterface' ]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Einstellungen, label: SettingValue , icon: <i class="fa fa-cog"></i>, show_in_dashboard: false}

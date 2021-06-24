@@ -25,7 +25,7 @@ class SettingTypeProvider
     /**
      * type file
      */
-    const FILE_TYPE = 'email';
+    const FILE_TYPE = 'file';
 
     /**
      * available types

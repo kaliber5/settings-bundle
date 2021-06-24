@@ -8,10 +8,12 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         public: false       # Allows optimizing the container by removing unused services; this also means
         bind:
-            $settingsUploadPath: '%settings_upload_path%'
+            string $settingsUploadPath: '%settings_upload_path%'
 
     Kaliber5\SettingsBundle\Provider\SettingsProvider:
 
     Kaliber5\SettingsBundle\Provider\SettingTypeProvider:
+
+    Kaliber5\SettingsBundle\Provider\SimpleFileProvider:
 
     Kaliber5\SettingsBundle\Provider\FileProviderInterface: '@Kaliber5\SettingsBundle\Provider\SimpleFileProvider'

@@ -34,7 +34,7 @@ class Setting extends Attribute
      *
      * @ORM\Column(type="boolean")
      */
-    private $multiple = true;
+    protected $multiple = true;
 
     /**
      * @var string|null
@@ -224,6 +224,14 @@ class Setting extends Attribute
         return $this->getSettingValues()->map(function(SettingValue $value) {
             return $value->getValue();
         })->toArray();
+    }
+
+    /**
+     * @return SettingValue
+     */
+    public function createSettingValue(): SettingValue
+    {
+        return new SettingValue();
     }
 
     public function __toString(): string

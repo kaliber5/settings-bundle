@@ -70,6 +70,7 @@ class SettingValueAdmin extends AbstractAdmin
     {
         if (null !== $settingValue->getFile() && null !== $this->fileProvider) {
             $this->fileProvider->handleFileUpload($settingValue);
+            $settingValue->setValue($settingValue->getFile()->getClientOriginalName());
         }
     }
 
