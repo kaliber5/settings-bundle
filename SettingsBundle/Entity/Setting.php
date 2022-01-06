@@ -25,7 +25,7 @@ class Setting extends Attribute
     /**
      * @var string|null
      *
-     * @ORM\Column(unique=true)
+     * @ORM\Column(unique=true, length=191)
      */
     protected $code;
 
@@ -224,6 +224,21 @@ class Setting extends Attribute
         return $this->getSettingValues()->map(function(SettingValue $value) {
             return $value->getValue();
         })->toArray();
+    }
+
+    /**
+     * returns the values as a single value for a simple (api) access
+     *
+     * @return array|mixed|null
+     */
+    public function getValuesAsSingleValue()
+    {
+        $vals = $this->getValues();
+        if ($this->isMultiple()) {
+            return $vals;
+        } else {
+            return array_pop($vals);
+        }
     }
 
     /**

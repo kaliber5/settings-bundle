@@ -177,4 +177,9 @@ class SettingValue extends AttributeValue
     {
         $this->file = $file;
     }
+
+    public function __toString(): string
+    {
+        return "".$this->getValue();
+    }
 }

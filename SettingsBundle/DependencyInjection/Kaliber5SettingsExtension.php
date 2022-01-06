@@ -26,5 +26,9 @@ class Kaliber5SettingsExtension extends Extension
         if (isset($bundles['SonataAdminBundle'])) {
             $loader->load('sonata_admin.yaml');
         }
+
+        if (isset($bundles['EasyAdminBundle'])) {
+            $loader->load('easy_admin.yaml');
+        }
     }
 }

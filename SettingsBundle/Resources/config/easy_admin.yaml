@@ -1,0 +1,14 @@
+services:
+    Kaliber5\SettingsBundle\Controller\:
+        resource: '../../Controller/'
+        tags: [ 'controller.service_arguments' ]
+        autoconfigure: true
+        autowire: true
+
+    Kaliber5\SettingsBundle\Field\SettingValueFieldConfigurator:
+        autoconfigure: true
+        autowire: true
+
+    Kaliber5\SettingsBundle\EventSubscriber\EasyAdminSettingSubscriber:
+        autoconfigure: true
+        autowire: true
