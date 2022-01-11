@@ -17,6 +17,8 @@ use Kaliber5\SettingsBundle\Entity\SettingValue;
 use Kaliber5\SettingsBundle\Field\SettingValueField;
 use Kaliber5\SettingsBundle\Entity\Setting;
 use Kaliber5\SettingsBundle\Provider\SettingTypeProvider;
+use Sylius\Component\Attribute\AttributeType\IntegerAttributeType;
+use Sylius\Component\Attribute\AttributeType\TextAttributeType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -77,7 +79,7 @@ class SettingCrudController extends AbstractCrudController
                 ->setFormTypeOption('disabled', $edit),
             ChoiceField::new('type')
                 // @TODO not all types are supported. Start with text type for now
-                ->setChoices(['text' => 'text'])
+                ->setChoices(array_combine([TextAttributeType::TYPE, IntegerAttributeType::TYPE, SettingTypeProvider::FLOAT_TYPE], [TextAttributeType::TYPE, IntegerAttributeType::TYPE, SettingTypeProvider::FLOAT_TYPE]))
 //                ->setChoices(array_combine($this->settingTypeProvider->getSupportedTypes(), $this->settingTypeProvider->getSupportedTypes()))
                 ->setFormTypeOption('disabled', $edit),
             // @TDOD theres an bug with multiple fields
