@@ -35,6 +35,13 @@ class SettingValue extends AttributeValue
     protected $text;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="val_longtext", type="text", nullable=true)
+     */
+    protected $longtext;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="val_bool", type="boolean", nullable=true)
@@ -176,6 +183,22 @@ class SettingValue extends AttributeValue
     public function setFile(?UploadedFile $file): void
     {
         $this->file = $file;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongtext(): ?string
+    {
+        return $this->longtext;
+    }
+
+    /**
+     * @param string $longtext
+     */
+    public function setLongtext(string $longtext): void
+    {
+        $this->longtext = $longtext;
     }
 
     public function __toString(): string

@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
@@ -36,10 +37,18 @@ class SettingTypeProvider
     const FLOAT_TYPE = 'float';
 
     /**
+     * type longtext
+     */
+    const LONGTEXT_TYPE = 'longtext';
+
+    const STORAGE_LONGTEXT = 'longtext';
+
+    /**
      * available types
      */
     const TYPES = [
         TextAttributeType::TYPE,
+        self::LONGTEXT_TYPE,
         self::EMAIL_TYPE,
         CheckboxAttributeType::TYPE,
         self::FILE_TYPE,
@@ -57,6 +66,7 @@ class SettingTypeProvider
         CheckboxAttributeType::TYPE => AttributeValueInterface::STORAGE_BOOLEAN,
         IntegerAttributeType::TYPE => AttributeValueInterface::STORAGE_INTEGER,
         self::FLOAT_TYPE => AttributeValueInterface::STORAGE_FLOAT,
+        self::LONGTEXT_TYPE => self::STORAGE_LONGTEXT,
     ];
 
     /**
@@ -64,6 +74,7 @@ class SettingTypeProvider
      */
     const FORM_TYPES = [
         TextAttributeType::TYPE => TextType::class,
+        self::LONGTEXT_TYPE => TextareaType::class,
         self::EMAIL_TYPE => EmailType::class,
         self::FILE_TYPE => FileType::class,
         CheckboxAttributeType::TYPE => CheckboxType::class,

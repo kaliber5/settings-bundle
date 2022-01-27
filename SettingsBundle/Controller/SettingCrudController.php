@@ -79,7 +79,7 @@ class SettingCrudController extends AbstractCrudController
                 ->setFormTypeOption('disabled', $edit),
             ChoiceField::new('type')
                 // @TODO not all types are supported. Start with text type for now
-                ->setChoices(array_combine([TextAttributeType::TYPE, IntegerAttributeType::TYPE, SettingTypeProvider::FLOAT_TYPE], [TextAttributeType::TYPE, IntegerAttributeType::TYPE, SettingTypeProvider::FLOAT_TYPE]))
+                ->setChoices(array_combine([TextAttributeType::TYPE, SettingTypeProvider::LONGTEXT_TYPE, IntegerAttributeType::TYPE, SettingTypeProvider::FLOAT_TYPE], [TextAttributeType::TYPE, SettingTypeProvider::LONGTEXT_TYPE, IntegerAttributeType::TYPE, SettingTypeProvider::FLOAT_TYPE]))
 //                ->setChoices(array_combine($this->settingTypeProvider->getSupportedTypes(), $this->settingTypeProvider->getSupportedTypes()))
                 ->setFormTypeOption('disabled', $edit),
             // @TDOD theres an bug with multiple fields
