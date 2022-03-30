@@ -79,7 +79,7 @@ class SettingValue extends AttributeValue
     /**
      * @var array
      *
-     * @ORM\Column(name="val_json", type="json_array", nullable=true)
+     * @ORM\Column(name="val_json", type="json", nullable=true)
      */
     protected $json;
 
